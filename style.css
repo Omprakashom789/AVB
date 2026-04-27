@@ -47,6 +47,18 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
 }
+
+/* ---- GLOBAL SITE BG IMAGE ---- */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: url('images/vr-training.jpg') center/cover no-repeat;
+  opacity: 0.035;
+  pointer-events: none;
+  filter: blur(2px) saturate(0.4);
+}
 img { display: block; max-width: 100%; }
 a { text-decoration: none; color: inherit; }
 
@@ -164,15 +176,47 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ---------- HERO ---------- */
+.hero-section-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.hero-section-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('images/vr-training.jpg') center 30%/cover no-repeat;
+  opacity: 0.18;
+  filter: saturate(0.6) blur(0px);
+  transform: scale(1.04);
+  transition: transform 8s ease;
+}
+.hero-section-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(6,11,20,0.96) 40%, rgba(6,11,20,0.5) 100%),
+    linear-gradient(to bottom, rgba(6,11,20,0.3) 0%, rgba(6,11,20,0.95) 100%);
+}
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
   padding: 120px 24px 80px;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   position: relative;
   gap: 60px;
+}
+/* hero wrapper to hold bg */
+.hero-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.hero-wrapper:hover .hero-section-bg::before {
+  transform: scale(1.08);
 }
 .hero-glow {
   position: fixed;
@@ -181,9 +225,9 @@ a { text-decoration: none; color: inherit; }
   pointer-events: none;
   z-index: 0;
 }
-.g1 { width: 500px; height: 500px; top: -100px; left: -100px; background: rgba(0,212,170,0.08); }
-.g2 { width: 400px; height: 400px; top: 200px; right: 0; background: rgba(59,130,246,0.08); }
-.g3 { width: 300px; height: 300px; bottom: 0; left: 40%; background: rgba(139,92,246,0.06); }
+.g1 { width: 500px; height: 500px; top: -100px; left: -100px; background: rgba(0,212,170,0.09); }
+.g2 { width: 400px; height: 400px; top: 200px; right: 0; background: rgba(59,130,246,0.09); }
+.g3 { width: 300px; height: 300px; bottom: 0; left: 40%; background: rgba(139,92,246,0.07); }
 
 .hero-content {
   flex: 1;
@@ -445,7 +489,12 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ---------- ABOUT ---------- */
-.about-section { background: var(--c-bg2); }
+.about-section {
+  background:
+    linear-gradient(135deg, rgba(6,11,20,0.96) 0%, rgba(8,15,28,0.92) 100%),
+    url('images/classroom.jpg') center/cover no-repeat;
+  background-attachment: fixed;
+}
 .about-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -482,7 +531,12 @@ a { text-decoration: none; color: inherit; }
 .about-item strong { color: var(--c-text); }
 
 /* ---------- SERVICES ---------- */
-.services-section { background: var(--c-bg); }
+.services-section {
+  background:
+    linear-gradient(135deg, rgba(6,11,20,0.95) 0%, rgba(10,18,35,0.90) 100%),
+    url('images/hplc-machine.jpg') center/cover no-repeat;
+  background-attachment: fixed;
+}
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -542,7 +596,12 @@ a { text-decoration: none; color: inherit; }
 .sc-link:hover span { transform: translateX(4px); }
 
 /* ---------- TRAINING ---------- */
-.training-section { background: var(--c-bg2); }
+.training-section {
+  background:
+    linear-gradient(135deg, rgba(6,11,20,0.95) 30%, rgba(8,15,28,0.88) 100%),
+    url('images/classroom.jpg') center top/cover no-repeat;
+  background-attachment: fixed;
+}
 .training-layout {
   display: grid;
   grid-template-columns: 1fr 340px;
@@ -708,7 +767,12 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ---------- PROJECTS ---------- */
-.projects-section { background: var(--c-bg); }
+.projects-section {
+  background:
+    linear-gradient(135deg, rgba(6,11,20,0.96) 0%, rgba(10,18,35,0.91) 100%),
+    url('images/hplc-student.jpg') center/cover no-repeat;
+  background-attachment: fixed;
+}
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -769,7 +833,12 @@ a { text-decoration: none; color: inherit; }
 .pgal-item:hover .pgal-caption { transform: translateY(0); }
 
 /* ---------- CORPORATE ---------- */
-.corporate-section { background: var(--c-bg2); }
+.corporate-section {
+  background:
+    linear-gradient(135deg, rgba(6,11,20,0.95) 0%, rgba(8,15,28,0.92) 100%),
+    url('images/industrial-group.png') center/cover no-repeat;
+  background-attachment: fixed;
+}
 .corporate-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -791,7 +860,12 @@ a { text-decoration: none; color: inherit; }
 .corp-item p { font-size: 0.86rem; color: var(--c-text-muted); }
 
 /* ---------- PLACEMENT ---------- */
-.placement-section { background: var(--c-bg); }
+.placement-section {
+  background:
+    linear-gradient(135deg, rgba(6,11,20,0.94) 0%, rgba(10,18,35,0.90) 100%),
+    url('images/job-drive1.jpg') center/cover no-repeat;
+  background-attachment: fixed;
+}
 .placement-layout {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -880,7 +954,10 @@ a { text-decoration: none; color: inherit; }
 
 /* ---------- CONTACT ---------- */
 .contact-section {
-  background: var(--c-bg2);
+  background:
+    linear-gradient(135deg, rgba(6,11,20,0.96) 0%, rgba(8,15,28,0.93) 100%),
+    url('images/industry-visit.jpg') center/cover no-repeat;
+  background-attachment: fixed;
   position: relative;
   overflow: hidden;
 }
@@ -1145,6 +1222,33 @@ a.ci-value:hover { color: var(--c-teal); }
     transform: scale(1.08);
   }
   .wa-label { display: none; }
+}
+
+/* ---- HERO LIGHT STREAK ---- */
+.hero-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 10%; left: -10%;
+  width: 60%; height: 60%;
+  background: radial-gradient(ellipse at 30% 40%, rgba(0,212,170,0.07) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---- CARD GLASS SURFACES (pop over photo bg) ---- */
+.about-item,
+.service-card,
+.tc-item,
+.proj-card,
+.corp-item,
+.ps-card,
+.ci-item,
+.contact-form,
+.training-highlight {
+  background: rgba(13,23,40,0.80) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-color: rgba(255,255,255,0.09) !important;
 }
 
 @media (max-width: 1024px) {
