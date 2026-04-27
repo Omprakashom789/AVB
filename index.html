@@ -3,19 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AVB Life Science Academy | Bridging the Gap Between Industry & Institute</title>
+  <title>AVB Life Science Academy | Bridging Industry & Institute</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;1,6..12,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
+
+  <!-- PARTICLES BG -->
+  <canvas id="particles" aria-hidden="true"></canvas>
 
   <!-- NAV -->
   <header class="navbar" id="navbar">
     <div class="nav-inner">
-      <div class="nav-logo">
-        <img src="avb-logo.jpg" alt="AVB Logo" class="logo-img" />
-        <span class="logo-text">Life Science Academy</span>
-      </div>
+      <a href="#home" class="nav-logo">
+        <img src="images/avb-logo.jpg" alt="AVB Logo" class="logo-img" />
+        <span class="logo-text">Life Science <em>Academy</em></span>
+      </a>
       <nav class="nav-links" id="navLinks">
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -33,24 +38,47 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <div class="hero-bg-pattern"></div>
+    <div class="hero-glow g1"></div>
+    <div class="hero-glow g2"></div>
+    <div class="hero-glow g3"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Premier Industry-Oriented Training</p>
-      <h1 class="hero-title">Bridging the Gap Between<br /><em>Industry &amp; Institute</em></h1>
+      <div class="hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        Premier Industry-Oriented Training
+      </div>
+      <h1 class="hero-title">
+        Bridging the Gap Between
+        <span class="title-highlight">Industry &amp; Institute</span>
+      </h1>
       <p class="hero-sub">AVB Life Science Academy empowers pharmacy and life science students and professionals with real-world skills, certifications, and career opportunities.</p>
       <div class="hero-actions">
-        <a href="#services" class="btn-primary">Explore Programs</a>
-        <a href="#contact" class="btn-ghost">Get in Touch →</a>
+        <a href="#services" class="btn-primary">
+          <span>Explore Programs</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn-ghost">Get in Touch</a>
       </div>
       <div class="hero-stats">
-        <div class="hstat"><span class="hstat-num">200+</span><span class="hstat-label">Students Trained</span></div>
+        <div class="hstat">
+          <span class="hstat-num">200+</span>
+          <span class="hstat-label">Students Trained</span>
+        </div>
         <div class="hstat-divider"></div>
-        <div class="hstat"><span class="hstat-num">200+</span><span class="hstat-label">Corporate Professionals</span></div>
+        <div class="hstat">
+          <span class="hstat-num">200+</span>
+          <span class="hstat-label">Corporate Professionals</span>
+        </div>
         <div class="hstat-divider"></div>
-        <div class="hstat"><span class="hstat-num">5+</span><span class="hstat-label">Services Offered</span></div>
+        <div class="hstat">
+          <span class="hstat-num">5+</span>
+          <span class="hstat-label">Services Offered</span>
+        </div>
       </div>
     </div>
     <div class="hero-visual">
+      <div class="hero-ring r1"></div>
+      <div class="hero-ring r2"></div>
+      <div class="hero-ring r3"></div>
       <div class="hero-card-float hc1">
         <div class="hc-icon">🔬</div>
         <div class="hc-text">QC &amp; QA Training</div>
@@ -63,56 +91,58 @@
         <div class="hc-icon">💼</div>
         <div class="hc-text">Job Placement</div>
       </div>
-      <div class="hero-circle"></div>
+      <div class="hero-logo-float">
+        <img src="images/avb-logo.jpg" alt="AVB" />
+      </div>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section class="section about-section" id="about">
     <div class="container">
-      <div class="section-label">Who We Are</div>
-      <h2 class="section-title">A Premier Training Academy<br />for Life Science Professionals</h2>
-      <p class="section-sub">AVB Life Science Academy is a premier industry-oriented training organization dedicated to life science students and professionals. We focus on bridging the gap between academic learning and real-time industry requirements.</p>
+      <div class="section-label reveal">Who We Are</div>
+      <h2 class="section-title reveal">A Premier Training Academy<br />for Life Science Professionals</h2>
+      <p class="section-sub reveal">AVB Life Science Academy is a premier industry-oriented training organization dedicated to life science students and professionals. We focus on bridging the gap between academic learning and real-time industry requirements.</p>
       <div class="about-grid">
         <div class="about-item reveal">
-          <div class="about-dot"></div>
+          <div class="about-num">01</div>
           <p>Delivered large-scale virtual training to <strong>200+ pharmacy students</strong> and professionals using immersive, tech-enabled sessions.</p>
         </div>
         <div class="about-item reveal">
-          <div class="about-dot"></div>
+          <div class="about-num">02</div>
           <p>Conducted high-impact <strong>VR-based training programs</strong> for 200+ employees at reputed pharma companies in Hyderabad.</p>
         </div>
         <div class="about-item reveal">
-          <div class="about-dot"></div>
-          <p>Organized multiple <strong>on-campus and off-campus job drives</strong> connecting trained candidates with various pharmaceutical companies.</p>
+          <div class="about-num">03</div>
+          <p>Organized multiple <strong>on-campus and off-campus job drives</strong> connecting trained candidates with pharmaceutical companies.</p>
         </div>
         <div class="about-item reveal">
-          <div class="about-dot"></div>
-          <p>Facilitated <strong>direct selections and offer letters</strong> through transparent, structured recruitment support for freshers and experienced candidates.</p>
+          <div class="about-num">04</div>
+          <p>Facilitated <strong>direct selections and offer letters</strong> through transparent, structured recruitment support for freshers.</p>
         </div>
         <div class="about-item reveal">
-          <div class="about-dot"></div>
+          <div class="about-num">05</div>
           <p>Provided intensive classroom trainings on <strong>GMP, QC, QA, documentation, and interview skills</strong> for life science graduates.</p>
         </div>
         <div class="about-item reveal">
-          <div class="about-dot"></div>
-          <p>Designed <strong>customized training modules and internships</strong> for colleges, industries, and corporate clients in both online and offline modes.</p>
+          <div class="about-num">06</div>
+          <p>Designed <strong>customized training modules and internships</strong> for colleges, industries, and corporate clients online &amp; offline.</p>
         </div>
         <div class="about-item reveal">
-          <div class="about-dot"></div>
+          <div class="about-num">07</div>
           <p>Supported <strong>M.Pharm, B.Pharm, and M.Sc students</strong> with live projects, plagiarism checks, and publication assistance.</p>
         </div>
         <div class="about-item reveal">
-          <div class="about-dot"></div>
+          <div class="about-num">08</div>
           <p>Offered <strong>government-linked and corporate skill-development programs</strong> with a focus on employability and industry compliance.</p>
         </div>
         <div class="about-item reveal">
-          <div class="about-dot"></div>
+          <div class="about-num">09</div>
           <p>Shared regular <strong>pharma job updates, resume support,</strong> and profile recommendations to help candidates secure the right roles.</p>
         </div>
         <div class="about-item reveal">
-          <div class="about-dot"></div>
-          <p>Positioned AVB Life Science Academy as a <strong>single platform</strong> for training, internships, corporate programs, and recruitment services.</p>
+          <div class="about-num">10</div>
+          <p>Positioned AVB as a <strong>single platform</strong> for training, internships, corporate programs, and recruitment services.</p>
         </div>
       </div>
     </div>
@@ -121,43 +151,48 @@
   <!-- SERVICES -->
   <section class="section services-section" id="services">
     <div class="container">
-      <div class="section-label">Our Services</div>
-      <h2 class="section-title">Everything You Need,<br />Under One Roof</h2>
+      <div class="section-label reveal">Our Services</div>
+      <h2 class="section-title reveal">Everything You Need,<br />Under One Roof</h2>
       <div class="services-grid">
         <div class="service-card reveal">
+          <div class="sc-glow"></div>
           <div class="sc-num">01</div>
           <div class="sc-icon">📁</div>
           <h3>Industry-Oriented Projects</h3>
           <p>Live projects, plagiarism checks, HPLC guidance, and university-approved project support for B.Sc, M.Sc, B.Pharm &amp; M.Pharm students.</p>
-          <a href="#projects" class="sc-link">Learn more →</a>
+          <a href="#projects" class="sc-link">Learn more <span>→</span></a>
         </div>
         <div class="service-card reveal">
+          <div class="sc-glow"></div>
           <div class="sc-num">02</div>
           <div class="sc-icon">🏫</div>
           <h3>Training Programs</h3>
           <p>QC, QA, GMP, Regulatory Affairs — online and offline programs designed to meet current pharma industry requirements.</p>
-          <a href="#training" class="sc-link">Learn more →</a>
+          <a href="#training" class="sc-link">Learn more <span>→</span></a>
         </div>
         <div class="service-card reveal">
+          <div class="sc-glow"></div>
           <div class="sc-num">03</div>
           <div class="sc-icon">🧪</div>
           <h3>Internships</h3>
           <p>Hands-on industrial training programmes with real-time pharmaceutical industry operations, including industry visits.</p>
-          <a href="#placement" class="sc-link">Learn more →</a>
+          <a href="#placement" class="sc-link">Learn more <span>→</span></a>
         </div>
         <div class="service-card reveal">
+          <div class="sc-glow"></div>
           <div class="sc-num">04</div>
           <div class="sc-icon">🤝</div>
           <h3>Recruitment Services</h3>
           <p>Exclusive job drives, transparent placements, and direct offer letters for freshers and experienced professionals.</p>
-          <a href="#placement" class="sc-link">Learn more →</a>
+          <a href="#placement" class="sc-link">Learn more <span>→</span></a>
         </div>
         <div class="service-card reveal">
+          <div class="sc-glow"></div>
           <div class="sc-num">05</div>
           <div class="sc-icon">🏢</div>
           <h3>Corporate Services</h3>
           <p>Government-sponsored skill development, NAPS/NATS support, CSR programs, and customized corporate training modules.</p>
-          <a href="#corporate" class="sc-link">Learn more →</a>
+          <a href="#corporate" class="sc-link">Learn more <span>→</span></a>
         </div>
       </div>
     </div>
@@ -166,12 +201,12 @@
   <!-- TRAINING -->
   <section class="section training-section" id="training">
     <div class="container">
-      <div class="section-label">Training Programs</div>
-      <h2 class="section-title">Industry-Standard Courses<br /><em>Online &amp; Offline</em></h2>
+      <div class="section-label reveal">Training Programs</div>
+      <h2 class="section-title reveal">Industry-Standard Courses<br /><em>Online &amp; Offline</em></h2>
       <div class="training-layout">
         <div class="training-info">
-          <p class="training-intro">We provide industry-oriented pharmaceutical courses designed to meet current pharma industry requirements. Virtual &amp; on-campus corporate training with smart classroom teaching.</p>
-          <div class="training-modes">
+          <p class="training-intro reveal">We provide industry-oriented pharmaceutical courses designed to meet current pharma industry requirements. Virtual &amp; on-campus corporate training with smart classroom teaching.</p>
+          <div class="training-modes reveal">
             <span class="mode-badge">Online</span>
             <span class="mode-badge">Offline</span>
             <span class="mode-badge">Corporate On-Site</span>
@@ -213,22 +248,27 @@
               </div>
             </div>
           </div>
-          <!-- Training Photo Gallery -->
           <div class="training-gallery">
-            <img src="vr-training.jpg" alt="VR-based corporate training session" class="tgal-img reveal" />
-            <img src="classroom.jpg" alt="Smart classroom teaching" class="tgal-img reveal" />
+            <div class="tgal-item reveal">
+              <img src="images/vr-training.jpg" alt="VR-based corporate training" />
+              <div class="tgal-overlay"><span>VR Training</span></div>
+            </div>
+            <div class="tgal-item reveal">
+              <img src="images/classroom.jpg" alt="Smart classroom teaching" />
+              <div class="tgal-overlay"><span>Smart Classroom</span></div>
+            </div>
           </div>
         </div>
         <div class="training-highlight reveal">
-          <div class="th-badge">Successfully Delivered</div>
+          <div class="th-badge">✦ Successfully Delivered</div>
           <div class="th-num">200+</div>
           <div class="th-text">Pharmaceutical Professionals Trained Through Large-Scale Virtual Programs</div>
           <div class="th-divider"></div>
           <ul class="th-list">
-            <li>Smart Classroom Teaching</li>
-            <li>Virtual &amp; On-Campus Delivery</li>
-            <li>Certified Instructors</li>
-            <li>Practical Hands-On Sessions</li>
+            <li><span class="th-check">✓</span> Smart Classroom Teaching</li>
+            <li><span class="th-check">✓</span> Virtual &amp; On-Campus Delivery</li>
+            <li><span class="th-check">✓</span> Certified Instructors</li>
+            <li><span class="th-check">✓</span> Practical Hands-On Sessions</li>
           </ul>
         </div>
       </div>
@@ -238,8 +278,8 @@
   <!-- PROJECTS -->
   <section class="section projects-section" id="projects">
     <div class="container">
-      <div class="section-label">Project Works</div>
-      <h2 class="section-title">Industry-Oriented<br />Project Guidance</h2>
+      <div class="section-label reveal">Project Works</div>
+      <h2 class="section-title reveal">Industry-Oriented<br />Project Guidance</h2>
       <div class="projects-grid">
         <div class="proj-card reveal">
           <div class="proj-icon">🔬</div>
@@ -272,27 +312,28 @@
           <p>Specially designed modules that align your academic project with real pharma industry job requirements.</p>
         </div>
       </div>
-      <!-- Projects Photo Gallery -->
       <div class="projects-gallery">
         <div class="pgal-item reveal">
-          <img src="lab-student.png" alt="Student working in pharmaceutical lab" class="pgal-img" />
+          <img src="images/lab-student.png" alt="Student working in lab" />
           <div class="pgal-caption">Hands-On Lab Training</div>
         </div>
         <div class="pgal-item reveal">
-          <img src="hplc-student.jpg" alt="Student operating HPLC equipment" class="pgal-img" />
+          <img src="images/hplc-student.jpg" alt="Student operating HPLC" />
           <div class="pgal-caption">HPLC Equipment Training</div>
         </div>
         <div class="pgal-item reveal">
-          <img src="hplc-machine.jpg" alt="Waters Alliance HPLC machine" class="pgal-img" />
+          <img src="images/hplc-machine.jpg" alt="Waters Alliance HPLC" />
           <div class="pgal-caption">Industry-Grade HPLC Equipment</div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- CORPORATE -->
   <section class="section corporate-section" id="corporate">
     <div class="container">
-      <div class="section-label">Corporate Services</div>
-      <h2 class="section-title">Empowering Organizations<br />Through Skill Development</h2>
+      <div class="section-label reveal">Corporate Services</div>
+      <h2 class="section-title reveal">Empowering Organizations<br />Through Skill Development</h2>
       <div class="corporate-grid">
         <div class="corp-item reveal">
           <div class="corp-icon">🏛️</div>
@@ -331,38 +372,20 @@
   <!-- PLACEMENT -->
   <section class="section placement-section" id="placement">
     <div class="container">
-      <div class="section-label">Job Drives &amp; Placement</div>
-      <h2 class="section-title">Your Career,<br /><em>Our Mission</em></h2>
+      <div class="section-label reveal">Job Drives &amp; Placement</div>
+      <h2 class="section-title reveal">Your Career,<br /><em>Our Mission</em></h2>
       <div class="placement-layout">
         <div class="placement-text">
-          <p>We organize exclusive job drives and internship programs connecting talented candidates with top companies. Our recruitment team ensures the right match between skills and industry needs.</p>
-          <p>Multiple companies participate, offering diverse career and internship opportunities. Students gain direct access to employers through our placement and internship support.</p>
-          <p>We make the hiring process <strong>simple, transparent, and career-focused.</strong></p>
+          <p class="reveal">We organize exclusive job drives and internship programs connecting talented candidates with top companies. Our recruitment team ensures the right match between skills and industry needs.</p>
+          <p class="reveal">Multiple companies participate, offering diverse career and internship opportunities. Students gain direct access to employers through our placement and internship support.</p>
+          <p class="reveal">We make the hiring process <strong>simple, transparent, and career-focused.</strong></p>
           <div class="placement-features">
-            <div class="pf-item reveal">
-              <span class="pf-check">✓</span>
-              <span>On-campus &amp; off-campus job drives</span>
-            </div>
-            <div class="pf-item reveal">
-              <span class="pf-check">✓</span>
-              <span>Direct offer letters &amp; selections</span>
-            </div>
-            <div class="pf-item reveal">
-              <span class="pf-check">✓</span>
-              <span>Resume support &amp; profile recommendations</span>
-            </div>
-            <div class="pf-item reveal">
-              <span class="pf-check">✓</span>
-              <span>Regular pharma job updates</span>
-            </div>
-            <div class="pf-item reveal">
-              <span class="pf-check">✓</span>
-              <span>Support for freshers &amp; experienced candidates</span>
-            </div>
-            <div class="pf-item reveal">
-              <span class="pf-check">✓</span>
-              <span>Industrial training with industry visits</span>
-            </div>
+            <div class="pf-item reveal"><span class="pf-check">✓</span><span>On-campus &amp; off-campus job drives</span></div>
+            <div class="pf-item reveal"><span class="pf-check">✓</span><span>Direct offer letters &amp; selections</span></div>
+            <div class="pf-item reveal"><span class="pf-check">✓</span><span>Resume support &amp; profile recommendations</span></div>
+            <div class="pf-item reveal"><span class="pf-check">✓</span><span>Regular pharma job updates</span></div>
+            <div class="pf-item reveal"><span class="pf-check">✓</span><span>Support for freshers &amp; experienced candidates</span></div>
+            <div class="pf-item reveal"><span class="pf-check">✓</span><span>Industrial training with industry visits</span></div>
           </div>
         </div>
         <div class="placement-stats">
@@ -384,33 +407,34 @@
           </div>
         </div>
       </div>
-      <!-- Placement Photo Gallery -->
       <div class="placement-gallery">
         <div class="plgal-item reveal">
-          <img src="job-drive1.jpg" alt="Students holding offer letters at job drive" class="plgal-img" />
+          <img src="images/job-drive1.jpg" alt="Students with offer letters" />
           <div class="plgal-caption">Job Drive — Offer Letters Distributed</div>
         </div>
         <div class="plgal-item reveal">
-          <img src="job-drive2.jpg" alt="Successful placement selections" class="plgal-img" />
-          <div class="plgal-caption">Direct Selections & Placements</div>
+          <img src="images/job-drive2.jpg" alt="Direct Selections" />
+          <div class="plgal-caption">Direct Selections &amp; Placements</div>
         </div>
         <div class="plgal-item reveal">
-          <img src="industry-visit.jpg" alt="Students on industry visit at pharma company" class="plgal-img" />
+          <img src="images/industry-visit.jpg" alt="Industry Visit" />
           <div class="plgal-caption">Industry Visit — Real-World Exposure</div>
         </div>
         <div class="plgal-item reveal">
-          <img src="industrial-group.png" alt="Industrial training program group photo" class="plgal-img" />
+          <img src="images/industrial-group.png" alt="Industrial Training" />
           <div class="plgal-caption">Industrial Training Programme</div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- CONTACT -->
   <section class="section contact-section" id="contact">
     <div class="container">
-      <div class="section-label">Get In Touch</div>
-      <h2 class="section-title">Start Your Journey<br /><em>With AVB Today</em></h2>
+      <div class="section-label reveal">Get In Touch</div>
+      <h2 class="section-title reveal">Start Your Journey<br /><em>With AVB Today</em></h2>
       <div class="contact-layout">
-        <div class="contact-info">
+        <div class="contact-info reveal">
           <div class="ci-item">
             <div class="ci-icon">📞</div>
             <div>
@@ -440,12 +464,21 @@
             </div>
           </div>
           <div class="social-row">
-            <a href="https://facebook.com/avblifescienceacademy" target="_blank" class="soc-btn">Facebook</a>
-            <a href="https://instagram.com/avblifescienceacademy" target="_blank" class="soc-btn">Instagram</a>
-            <a href="https://youtube.com/avblifescienceacademy" target="_blank" class="soc-btn">YouTube</a>
+            <a href="https://facebook.com/avblifescienceacademy" target="_blank" class="soc-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              Facebook
+            </a>
+            <a href="https://instagram.com/avblifescienceacademy" target="_blank" class="soc-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              Instagram
+            </a>
+            <a href="https://youtube.com/avblifescienceacademy" target="_blank" class="soc-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+              YouTube
+            </a>
           </div>
         </div>
-        <form class="contact-form" id="contactForm">
+        <form class="contact-form reveal" id="contactForm">
           <div class="form-group">
             <label for="name">Full Name</label>
             <input type="text" id="name" placeholder="Your full name" required />
@@ -476,7 +509,10 @@
             <label for="message">Message</label>
             <textarea id="message" rows="4" placeholder="Tell us about yourself and what you're looking for..."></textarea>
           </div>
-          <button type="submit" class="btn-primary form-submit">Send Enquiry</button>
+          <button type="submit" class="btn-primary form-submit">
+            <span>Send Enquiry</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22 11 13 2 9z"/></svg>
+          </button>
           <div class="form-success" id="formSuccess">✓ Thank you! We'll get back to you shortly.</div>
         </form>
       </div>
@@ -485,12 +521,13 @@
 
   <!-- FOOTER -->
   <footer class="footer">
+    <div class="footer-glow"></div>
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
           <div class="nav-logo">
-            <img src="avb-logo.jpg" alt="AVB Logo" class="logo-img" />
-            <span class="logo-text" style="color:#E8C97A">Life Science Academy</span>
+            <img src="images/avb-logo.jpg" alt="AVB Logo" class="logo-img" />
+            <span class="logo-text">Life Science <em>Academy</em></span>
           </div>
           <p>Bridging the gap between industry and institute — one student at a time.</p>
         </div>
@@ -526,6 +563,21 @@
       </div>
     </div>
   </footer>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a
+    href="https://wa.me/918099019595?text=Hi%20AVB%20Life%20Science%20Academy%2C%20I%20am%20interested%20in%20your%20training%20programs.%20Please%20share%20more%20details."
+    class="wa-btn"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat on WhatsApp"
+  >
+    <div class="wa-pulse"></div>
+    <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <span class="wa-label">Chat with us</span>
+  </a>
 
   <script src="script.js"></script>
 </body>

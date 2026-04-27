@@ -1,18 +1,72 @@
 // ===========================
 // AVB LIFE SCIENCE ACADEMY
-// Main JavaScript
+// Enhanced JavaScript
 // ===========================
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ---- PARTICLES CANVAS ----
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const particles = [];
+  const COLORS = ['rgba(0,212,170,', 'rgba(59,130,246,', 'rgba(139,92,246,'];
+
+  for (let i = 0; i < 60; i++) {
+    particles.push({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      r: Math.random() * 1.5 + 0.5,
+      dx: (Math.random() - 0.5) * 0.3,
+      dy: (Math.random() - 0.5) * 0.3,
+      color: COLORS[Math.floor(Math.random() * COLORS.length)],
+      alpha: Math.random() * 0.5 + 0.1,
+    });
+  }
+
+  function drawParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.color + p.alpha + ')';
+      ctx.fill();
+      p.x += p.dx;
+      p.y += p.dy;
+      if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+    });
+
+    // Draw connecting lines
+    particles.forEach((p, i) => {
+      particles.slice(i + 1).forEach(p2 => {
+        const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+        if (dist < 120) {
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.strokeStyle = `rgba(0,212,170,${0.06 * (1 - dist / 120)})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      });
+    });
+
+    requestAnimationFrame(drawParticles);
+  }
+  drawParticles();
+
   // ---- NAVBAR SCROLL EFFECT ----
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
   });
 
   // ---- HAMBURGER MOBILE MENU ----
@@ -20,27 +74,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.getElementById('navLinks');
 
   hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
+    const isOpen = navLinks.classList.toggle('open');
     const spans = hamburger.querySelectorAll('span');
-    if (navLinks.classList.contains('open')) {
+    if (isOpen) {
       spans[0].style.transform = 'translateY(7px) rotate(45deg)';
       spans[1].style.opacity = '0';
       spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
     } else {
-      spans[0].style.transform = '';
-      spans[1].style.opacity = '';
-      spans[2].style.transform = '';
+      spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
     }
   });
 
-  // Close menu on link click
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('open');
-      const spans = hamburger.querySelectorAll('span');
-      spans[0].style.transform = '';
-      spans[1].style.opacity = '';
-      spans[2].style.transform = '';
+      hamburger.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
     });
   });
 
@@ -51,38 +99,33 @@ document.addEventListener('DOMContentLoaded', () => {
   function setActiveNav() {
     let current = '';
     sections.forEach(section => {
-      const sTop = section.offsetTop - 120;
-      if (window.scrollY >= sTop) {
+      if (window.scrollY >= section.offsetTop - 140) {
         current = section.getAttribute('id');
       }
     });
     navAnchors.forEach(a => {
-      a.style.color = '';
+      a.classList.remove('active');
       if (a.getAttribute('href') === '#' + current) {
-        a.style.color = 'rgba(232,201,122,1)';
+        a.classList.add('active');
       }
     });
   }
-
   window.addEventListener('scroll', setActiveNav);
 
   // ---- SCROLL REVEAL ----
   const revealEls = document.querySelectorAll('.reveal');
 
   const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Stagger delay based on position among siblings
         const siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal'));
         const idx = siblings.indexOf(entry.target);
-        const delay = Math.min(idx * 80, 400);
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, delay);
+        const delay = Math.min(idx * 70, 350);
+        setTimeout(() => entry.target.classList.add('visible'), delay);
         revealObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.08 });
 
   revealEls.forEach(el => revealObserver.observe(el));
 
@@ -93,28 +136,23 @@ document.addEventListener('DOMContentLoaded', () => {
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-
       const btn = form.querySelector('.form-submit');
-      btn.textContent = 'Sending...';
+      btn.innerHTML = '<span>Sending...</span>';
       btn.disabled = true;
       btn.style.opacity = '0.7';
 
-      // Simulate form submission (replace with real backend)
       setTimeout(() => {
-        btn.textContent = 'Send Enquiry';
+        btn.innerHTML = '<span>Send Enquiry</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22 11 13 2 9z"/></svg>';
         btn.disabled = false;
         btn.style.opacity = '1';
         formSuccess.style.display = 'block';
         form.reset();
-
-        setTimeout(() => {
-          formSuccess.style.display = 'none';
-        }, 5000);
+        setTimeout(() => { formSuccess.style.display = 'none'; }, 5000);
       }, 1200);
     });
   }
 
-  // ---- SMOOTH SCROLL OFFSET (for fixed navbar) ----
+  // ---- SMOOTH SCROLL ----
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
@@ -136,15 +174,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const num = parseFloat(raw.replace(/[^0-9.]/g, ''));
     const suffix = raw.replace(/[0-9.]/g, '');
     if (isNaN(num) || suffix === '∞') return;
-
     let start = 0;
-    const duration = 1400;
-    const step = (timestamp) => {
-      if (!start) start = timestamp;
-      const progress = Math.min((timestamp - start) / duration, 1);
+    const duration = 1600;
+    const step = (ts) => {
+      if (!start) start = ts;
+      const progress = Math.min((ts - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      const current = Math.round(eased * num);
-      el.textContent = current + suffix;
+      el.textContent = Math.round(eased * num) + suffix;
       if (progress < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
