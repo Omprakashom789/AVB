@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', resize);
 
   const particles = [];
-  const COLORS = ['rgba(0,212,170,', 'rgba(59,130,246,', 'rgba(139,92,246,'];
+  const COLORS = ['rgba(37,99,235,', 'rgba(14,165,233,', 'rgba(96,165,250,'];
 
   for (let i = 0; i < 60; i++) {
     particles.push({
